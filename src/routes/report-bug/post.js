@@ -10,8 +10,10 @@ exports.route = (api) => {
 
         if (!validRequestBody) return responses.invalidRequest(res, errorText)
 
+        const { message, interfaces } = body
+
         try {
-            await sendMessages(body)
+            await sendMessages(message, interfaces)
             responses.successfulRequest(res)
         } catch (_) {
             responses.serverError(res)
