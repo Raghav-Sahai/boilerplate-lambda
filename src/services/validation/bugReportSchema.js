@@ -13,10 +13,9 @@ exports.schema = {
       interfaces: {
         type: "object",
         properties: {
-          email: { type: "string" },
-          phoneNumber: { type: "number" },
-          slackHook: { type: "string" }
+          email: { type: "string" }
         },
+        required: ["email"],
         additionalProperties: false
       }
     },

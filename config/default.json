@@ -1,0 +1,6 @@
+{
+    "email": "example@email.com",
+    "aws": {
+        "connectTimeout": 3000
+    }
+}

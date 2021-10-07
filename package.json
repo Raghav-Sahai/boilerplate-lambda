@@ -1,11 +1,12 @@
 {
   "name": "bug-reporting-lambda",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lambda that sends bug reports to email",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --fix --ext .js,.jsx ."
+    "lint": "eslint --fix --ext .js,.jsx .",
+    "local-server": "nodemon test/express-server/index.js"
   },
   "pre-commit": [
     "lint"
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/Raghav-Sahai/bug-reporting-lambda#readme",
   "devDependencies": {
+    "body-parser": "^1.19.0",
     "eslint": "^7.32.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.13",

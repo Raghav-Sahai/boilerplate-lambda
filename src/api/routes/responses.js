@@ -1,4 +1,5 @@
 const INTERNAL_SERVER_ERROR = "Internal server error"
+const SUCCESSFUL_RESPONSE = "Successfully reported bug"
 
 exports.invalidRequest = (res, developerText) => {
     return res.status(400).send({ developerText })
@@ -9,5 +10,5 @@ exports.serverError = (res) => {
 }
 
 exports.successfulRequest = (res) => {
-    return res.status(200).send({ developerText: "Successfully reported bug" })
+    return res.status(200).send({ developerText: SUCCESSFUL_RESPONSE })
 }
