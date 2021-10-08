@@ -1,10 +1,10 @@
-const config = require('config')
+const config = require('config');
 const AWS = require('aws-sdk');
 
 const ses = new AWS.SES({ region: config.get('aws.region') });
 
 exports.sendSesMessage = async (message, recipientEmail) => {
-    console.log("sesInterface::sendSesMessage")
+    console.log("sesInterface::sendSesMessage(message, recipientEmail)", message, recipientEmail)
 
     const params = {
         Destination: {
@@ -14,9 +14,9 @@ exports.sendSesMessage = async (message, recipientEmail) => {
           Body: {
             Text: { Data: message }
           },
-          Subject: { Data: "Test Email" },
+          Subject: { Data: config.get('emailProperties.emailTitle') },
         },
-        Source: "SourceEmailAddress"
+        Source: config.get('emailProperties.sourceEmail')
     };
 
     return ses.sendEmail(params).promise()
