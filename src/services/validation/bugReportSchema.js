@@ -1,15 +1,7 @@
 exports.schema = {
     type: "object",
     properties: {
-      message: {
-        properties: {
-          email: { type: "string" },
-          bugDetails: { type: "string" },
-          developerInformation: { type: "object" }
-        },
-        required: ["email", "bugDetails"],
-        additionalProperties: false
-      },
+      message: { type: "object" },
       interfaces: {
         type: "object",
         properties: {

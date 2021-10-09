@@ -5,7 +5,6 @@ exports.sendMessages = async (message, interfaces) => {
 
     const { email } = interfaces
 
-    
     // TODO: If multiple interfaces, wrap in promise.allSettled?
     await sendSesMessage(message, email)
 }

@@ -1,6 +1,5 @@
 const config = require('config');
 const AWS = require('aws-sdk');
-
 const ses = new AWS.SES({ region: config.get('aws.region') });
 
 exports.sendSesMessage = async (message, recipientEmail) => {

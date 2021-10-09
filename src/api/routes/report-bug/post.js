@@ -1,6 +1,6 @@
 const { validate } = require('../../../services/validation/bugReportValidation')
 const { sendMessages } = require('../../../services/sendMessages')
-const { invalidRequest, successfulRequest, serverError } = require('../responses')
+const { successfulRequest, invalidRequest, serverError } = require('../responses')
 
 exports.route = (api) => {
     api.post('/report-bug', async (req, res) => {
