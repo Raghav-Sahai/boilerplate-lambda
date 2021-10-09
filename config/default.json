@@ -1,8 +1,4 @@
 {
-    "emailProperties": {
-        "sourceEmail": "noReply@email.com",
-        "emailTitle": "email title"
-    },
     "aws": {
         "region": "us-east-2"
     }
