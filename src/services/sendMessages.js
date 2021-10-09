@@ -1,10 +1,7 @@
-const { sendSesMessage } = require('./interfaces/sesInterface')
+const { sendSnsMessage } = require('./interfaces/snsInterface')
 
-exports.sendMessages = async (message, interfaces) => {
-    console.log("sendMessages::sendMessages(message, interfaces)", message, interfaces)
+exports.sendMessages = async (message, phoneNumber) => {
+    console.log("sendMessages::sendMessages(message, phoneNumber)", message, phoneNumber)
 
-    const { email } = interfaces
-
-    // TODO: If multiple interfaces, wrap in promise.allSettled?
-    await sendSesMessage(message, email)
+    await sendSnsMessage(message, phoneNumber)
 }

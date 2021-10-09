@@ -1,16 +1,9 @@
 exports.schema = {
     type: "object",
     properties: {
-      message: { type: "object" },
-      interfaces: {
-        type: "object",
-        properties: {
-          email: { type: "string" }
-        },
-        required: ["email"],
-        additionalProperties: false
-      }
+      message: { type: "string" },
+      phoneNumber: { type: "number" }
     },
-    required: ["message", "interfaces"],
+    required: ["message", "phoneNumber"],
     additionalProperties: false
 }

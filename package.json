@@ -1,7 +1,7 @@
 {
   "name": "bug-reporting-lambda",
   "version": "1.0.0",
-  "description": "Lambda that sends bug reports to email",
+  "description": "Lambda that sends messages to email",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
