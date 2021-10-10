@@ -1,1 +1,1 @@
-# bug-reporting-lambda
+# boilerplate-lambda
