@@ -1,5 +1,5 @@
 const INTERNAL_SERVER_ERROR = "Internal server error"
-const SUCCESSFUL_RESPONSE = "Successfully sent message"
+const SUCCESSFUL_RESPONSE = "OK"
 
 exports.successfulRequest = (res) => {
     return res.status(200).send({ developerText: SUCCESSFUL_RESPONSE })

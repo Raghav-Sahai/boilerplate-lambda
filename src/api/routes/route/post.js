@@ -1,5 +1,5 @@
-const { validateBody, validateE164 } = require('../../../services/validation/bodyValidation')
-const { sendMessages } = require('../../../services/sendMessages')
+const { validateBody } = require('../../../services/validation/validation')
+const { execute } = require('../../../services/execute')
 const { successfulRequest, invalidRequest, serverError } = require('../responses')
 
 exports.route = (api) => {
@@ -9,12 +9,8 @@ exports.route = (api) => {
         const { valid: validRequestBody, errorText: bodyErrorText } = validateBody(body)
         if (!validRequestBody) return invalidRequest(res, bodyErrorText)
 
-        const { message, phoneNumber } = body
-        const { valid: validPhoneNumber, errorText: phoneNumberErrorText } = validateE164(phoneNumber)
-        if (!validPhoneNumber) return invalidRequest(res, phoneNumberErrorText)
-
         try {
-            await sendMessages(message, phoneNumber)
+            await execute(body)
             successfulRequest(res)
         } catch (error) {
             console.log(error)
