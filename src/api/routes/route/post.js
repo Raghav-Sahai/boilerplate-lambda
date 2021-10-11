@@ -1,9 +1,9 @@
 const { validateBody } = require('../../../services/validation/validation')
 const { execute } = require('../../../services/execute')
-const { successfulRequest, invalidRequest, serverError } = require('../responses')
+const { successfulRequest, invalidRequest, serverError } = require('../../../resources/responses')
 
 exports.route = (api) => {
-    api.post('/send-text', async (req, res) => {
+    api.post('/route', async (req, res) => {
 
         const { body } = req
         const { valid: validRequestBody, errorText: bodyErrorText } = validateBody(body)
